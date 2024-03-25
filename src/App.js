@@ -8,6 +8,8 @@ import Navbar from "./Navbar";
 import Discard from "./Discard";
 import Todo from "./Todo";
 import Dashboard from "./Dashboard";
+import Http from "./Http";
+import Oneproduct from "./Oneproduct";
 
 
 const App = () =>{
@@ -32,6 +34,8 @@ const App = () =>{
        <Route path="/" element={<Home/>}/>
        <Route path="/*" element={<Notfound/>}/>
        <Route path="/student/signup" element={<Discard/>}/>
+       <Route path="/http" element={<Http/>}/>
+       <Route path="/one/:id" element={<Oneproduct/>}/>
       
        <Route path="/dashboard" element={<Dashboard/>}>
          <Route path="/dashboard/profile" element={<Todo/>}/>

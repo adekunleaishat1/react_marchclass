@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Button from './Button'
 import Img from './Img'
 
@@ -16,6 +16,8 @@ const Home = () => {
   // {name:"Bolu", class:"Javascript"},
   // {name:"richard", class:"Node"}
   ]
+  
+  
   const change = () => {
     //  setname("sekinat") 
     // console.log(name);
@@ -70,7 +72,7 @@ const Home = () => {
         <Button style="btn btn-danger"  content="Dashboard"/>
         <Img image={require("./AAYQAgSuAAgAAQAAAAAAABlvNp5yzndgSdCsu3q6Pw22qA.png")}/>
         <Img image={require("./AAYQAgSuAAgAAQAAAAAAABlvNp5yzndgSdCsu3q6Pw22qA.png")}/>
-
+        
     </div>
   )
 }
