@@ -1,0 +1,23 @@
+{
+  "post": [
+    {
+      "id": "1412",
+      "title": "name",
+      "content": "richard"
+    }
+  ],
+  "users": [
+    {
+      "id": "fcfc",
+      "username": "tolani",
+      "email": "tolani@gmail.com",
+      "password": "Tholani@123"
+    },
+    {
+      "id": "364a",
+      "username": "adewale",
+      "email": "adewaleagbolahan025@gmail.com",
+      "password": "Adewale@145"
+    }
+  ]
+}
