@@ -4,8 +4,10 @@ import * as yup  from 'yup'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom'
 
 const Formik = () => {
+  const navigate = useNavigate()
     const [users, setusers] = useState([])
     useEffect(() => {
       axios.get("http://localhost:1234/users")
@@ -15,17 +17,21 @@ const Formik = () => {
         console.log(err);
       })
     }, )
+    // const formik = useFormik({
+
+    // })
     
     const formik = useFormik({
           initialValues:{
             username:"",
             email: "",
-            password:""
+            password:"",
+          
           },
           validationSchema:yup.object({
             username:yup.string().min(4,"username is too short").required("username is required"),
             email:yup.string().email("must be a valid email").required("email is required"),
-            password:yup.string().min(5, "password is too short").matches("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-])").required("password is required")
+            password:yup.string().min(5, "password is too short").matches(`^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-])`,"Password must have atleast a capital letter,an integer and special characters " ).required("password is required")
           }),
           onSubmit:(value)=>{
               console.log(value);
@@ -36,7 +42,9 @@ const Formik = () => {
                 axios.post("http://localhost:1234/users",value)
             .then((res)=>{
                 console.log(res.data)
+
                 toast.success("signup successful")
+                navigate = "/login"
             }).catch((err)=>{
                 toast.error(err?.response?.data?.message)
             })
@@ -45,6 +53,7 @@ const Formik = () => {
     })
     // console.log(formik.errors);
     // console.log(formik.touched);
+    
   return (
     <div>
         <form className='w-50 mx-auto px-4 py-4' onSubmit={formik.handleSubmit} action="">

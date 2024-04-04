@@ -12,6 +12,7 @@ import Http from "./Http";
 import Oneproduct from "./Oneproduct";
 import Classwork from "./Classwork";
 import Formik from "./Formik";
+import Login from "./Login";
 
 
 const App = () =>{
@@ -40,6 +41,7 @@ const App = () =>{
        <Route path="/one/:id" element={<Oneproduct/>}/>
        <Route path="/class" element={<Classwork/>}/>
        <Route path="/form" element={<Formik/>}/>
+       <Route path="/login" element={<Login/>}/>
       
        <Route path="/dashboard" element={<Dashboard/>}>
          <Route path="/dashboard/profile" element={<Todo/>}/>
