@@ -13,6 +13,9 @@ import Oneproduct from "./Oneproduct";
 import Classwork from "./Classwork";
 import Formik from "./Formik";
 import Login from "./Login";
+import Music from "./Music";
+import Counter from "./Counter";
+import Alluser from "./Alluser";
 
 
 const App = () =>{
@@ -42,6 +45,10 @@ const App = () =>{
        <Route path="/class" element={<Classwork/>}/>
        <Route path="/form" element={<Formik/>}/>
        <Route path="/login" element={<Login/>}/>
+       <Route path="/music" element={<Music/>}/>
+       <Route path="/count" element={<Counter/>}/>
+       <Route path="/user" element={<Alluser/>}/>
+
       
        <Route path="/dashboard" element={<Dashboard/>}>
          <Route path="/dashboard/profile" element={<Todo/>}/>
